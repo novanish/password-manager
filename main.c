@@ -13,6 +13,7 @@ int main()
         scanf(" %c[^\n]", &action);
 
         boolean shouldTerminate = perform_actions(action);
+        
         if (shouldTerminate)
             break;
     }

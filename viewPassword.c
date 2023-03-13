@@ -1,5 +1,4 @@
 #include "deletePassword.c"
-#include <stdio.h>
 
 void view_password() {
   struct Info current_info;
@@ -7,10 +6,16 @@ void view_password() {
   boolean hasFound = false;
   boolean matched;
 
-  list_emails();
+  boolean has_emails = list_emails();
+
+  if (!has_emails) {
+    printf("\n\nNo emails and password to view\n\n");
+    return;
+  }
 
   getchar();
-  printf("\n\nApp name or Email (max char 50) => ");
+  printf("\n\nEnter the App name or Email whose password you want to see (max "
+         "char 50) => ");
   fgets(email_or_app_name, sizeof(email_or_app_name), stdin);
 
   FILE *fp = fopen(FILE_NAME, "rb");
@@ -28,8 +33,8 @@ void view_password() {
       hasFound = true;
       printf("\nApp name:- %s", current_info.app_name);
       printf("Email:- %s", current_info.email);
-      printf("Enter a key to that is used to encode your password  for above "
-             "email and password => ");
+      printf("Enter a key to that is used to encode your password for above "
+             "email => ");
       int key = get_int();
 
       char *decoded_password = malloc(strlen(current_info.password));

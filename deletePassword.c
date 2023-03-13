@@ -4,13 +4,11 @@
 void delete_password() {
   struct Info current_info;
   char email_or_app_name[52];
-  boolean hasFound = false;
+  boolean has_found = false;
   boolean matched;
 
-  list_emails();
-
   getchar();
-  printf("\n\nApp name or Email (max char 50) => ");
+  printf("\n\nEnter App name or Email (max char 50) => ");
   fgets(email_or_app_name, sizeof(email_or_app_name), stdin);
 
   FILE *fp = fopen(FILE_NAME, "rb");
@@ -32,14 +30,14 @@ void delete_password() {
     matched = strcmp(current_info.email, email_or_app_name) == 0 ||
               strcmp(current_info.app_name, email_or_app_name) == 0;
 
-    if (matched && !hasFound) {
-      hasFound = true;
+    if (matched && !has_found) {
+      has_found = true;
     } else {
       fwrite(&current_info, sizeof(struct Info), 1, temp);
     }
   }
 
-  if (!hasFound)
+  if (!has_found)
     printf("\nThere is no email or app name in record %s\n", email_or_app_name);
 
   fclose(fp);

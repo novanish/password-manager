@@ -22,7 +22,6 @@ void save_password() {
 
   printf("\n\nFill up the form to save your password and email\n");
 
-  getchar();
   printf("App name (max char 30) => ");
   fgets(info.app_name, sizeof(info.app_name), stdin);
   //   strupr(info.app_name);
@@ -47,7 +46,7 @@ void save_password() {
   }
 
   printf("Enter a key to encode your password (key shouldn't be less than zero "
-         "and greater than 100)=> ");
+         "and greater than 100) => ");
   int key = get_int();
 
   char *encode_password = malloc(strlen(info.password));
