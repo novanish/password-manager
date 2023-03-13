@@ -7,6 +7,7 @@ void print_action_keys()
     printf("S to save password and email\n");
     printf("D to delete password and email\n");
     printf("U to update password and email\n");
+    printf("L to list emails\n");
     printf("V to view password\n");
     printf("Press Any key to terminate program (expect above mentioned keys)\n");
     printf("=> ");

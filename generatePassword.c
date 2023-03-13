@@ -9,13 +9,13 @@ typedef struct
 
 void generate_password(char **password)
 {
-    Range ranges[] = {{60, 90}, {97, 122}, {48, 57}, {33, 38}};
+    Range ranges[] = {{64, 90}, {97, 122}, {48, 57}, {35, 38}};
     Range selected_range;
     int length;
     int index;
     int i;
 
-    printf("\nEnter the length of the password =>");
+    printf("\nEnter the length of the password => ");
     scanf("%d", &length);
 
     (*password) = (char *)malloc(sizeof(char) * (length + 1));
