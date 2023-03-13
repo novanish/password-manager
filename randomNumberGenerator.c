@@ -1,16 +1,22 @@
+#include "encodeAndDecode.c"
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "boolean.c"
 
 static boolean initialized = false;
 
-int generate_random_number(int min, int max)
-{
-    if (!initialized)
-    {
-        srand(time(NULL)); // initialize random seed}
-        initialized = true;
-    }
+int generate_random_number(int min, int max) {
+  if (!initialized) {
+    srand(time(NULL)); // initialize random seed}
+    initialized = true;
+  }
 
-    return rand() % (max - min + 1) + min;
+  return rand() % (max - min + 1) + min;
+}
+
+int get_int() {
+  int n;
+  scanf("%d", &n);
+
+  return n;
 }

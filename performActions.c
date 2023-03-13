@@ -1,4 +1,4 @@
-#include "deletePassword.c"
+#include "viewPassword.c"
 #include <ctype.h>
 
 boolean perform_actions(char action) {
@@ -9,6 +9,11 @@ boolean perform_actions(char action) {
   }
 
   case 'U': {
+    return false;
+  }
+
+  case 'V': {
+    view_password();
     return false;
   }
 
