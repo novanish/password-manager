@@ -1,5 +1,5 @@
 #include "performActions.c"
-#include "printActionkeys.c"
+#include "printActionKeys.c"
 
 int main()
 {
