@@ -5,7 +5,9 @@ int main()
 {
     char action;
 
-    printf("\nWELCOME!!! to Password Manager\n");
+    printf("========================================\n");
+    printf("            PASSWORD MANAGER\n");
+    printf("========================================\n");
 
     while (true)
     {
