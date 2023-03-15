@@ -11,7 +11,6 @@ struct Info {
 
 void save_password() {
   struct Info info;
-  int should_generate;
   FILE *fp = fopen(FILE_NAME, APPEND);
 
   if (fp == NULL) {
@@ -30,7 +29,7 @@ void save_password() {
   //   strlwr(info.email);
 
   printf("You want to Generate or type password (1/0) => ");
-  scanf("%d", &should_generate);
+  int should_generate = get_int();
 
   if (should_generate) {
     char *password;
