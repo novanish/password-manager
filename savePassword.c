@@ -1,7 +1,6 @@
-#include "fileName.c"
+#include "file.c"
 #include "generatePassword.c"
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 struct Info {
@@ -13,7 +12,7 @@ struct Info {
 void save_password() {
   struct Info info;
   int should_generate;
-  FILE *fp = fopen(FILE_NAME, "ab");
+  FILE *fp = fopen(FILE_NAME, APPEND);
 
   if (fp == NULL) {
     printf("ERROR!!! While opening file to save password");

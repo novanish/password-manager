@@ -11,8 +11,8 @@ void delete_password() {
   printf("\n\nEnter App name or Email (max char 50) => ");
   fgets(email_or_app_name, sizeof(email_or_app_name), stdin);
 
-  FILE *fp = fopen(FILE_NAME, "rb");
-  FILE *temp = fopen("temp.bin", "wb");
+  FILE *fp = fopen(FILE_NAME, READ);
+  FILE *temp = fopen(TEMP_FILE_NAME, WRITE);
 
   if (temp == NULL) {
     printf("\nError while deleting\n");
@@ -44,5 +44,5 @@ void delete_password() {
   fclose(temp);
 
   remove(FILE_NAME);
-  rename("temp.bin", FILE_NAME);
+  rename(TEMP_FILE_NAME, FILE_NAME);
 }

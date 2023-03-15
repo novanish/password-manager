@@ -4,7 +4,7 @@
 boolean list_emails() {
   struct Info current_info;
 
-  FILE *fp = fopen(FILE_NAME, "rb");
+  FILE *fp = fopen(FILE_NAME, READ);
 
   int count = 0;
 

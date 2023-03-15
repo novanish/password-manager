@@ -18,7 +18,7 @@ void view_password() {
          "char 50) => ");
   fgets(email_or_app_name, sizeof(email_or_app_name), stdin);
 
-  FILE *fp = fopen(FILE_NAME, "rb");
+  FILE *fp = fopen(FILE_NAME, READ);
 
   if (fp == NULL) {
     printf("\nNo Emails!!\n");

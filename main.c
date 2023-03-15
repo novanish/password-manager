@@ -5,7 +5,7 @@ int main()
 {
     char action;
 
-    printf("\nWELCOME!!! to Password generator and saver\n");
+    printf("\nWELCOME!!! to Password Manager\n");
 
     while (true)
     {
