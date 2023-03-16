@@ -15,7 +15,7 @@ void generate_password(char **password)
     int i;
     int ranges_length = sizeof(ranges) / sizeof(Range);
 
-    printf("\nEnter the password_length of the password => ");
+    printf("\nEnter the length of the password => ");
     int password_length = get_int();
 
     (*password) = (char *)malloc(sizeof(char) * (password_length + 1));
