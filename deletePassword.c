@@ -16,7 +16,9 @@ void delete_password() {
 
   if (temp == NULL) {
     printf("\nError while deleting\n");
-    fp != NULL ? fclose(fp) : (1);
+    if (fp != NULL)
+      fclose(fp);
+      
     return;
   }
 
@@ -38,7 +40,7 @@ void delete_password() {
   }
 
   if (!has_found)
-    printf("\nThere is no email or app name in record %s\n", email_or_app_name);
+    printf("\nThere is no email or app name %s in record\n", email_or_app_name);
 
   fclose(fp);
   fclose(temp);
