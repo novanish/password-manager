@@ -1,26 +1,19 @@
 #include "performActions.c"
 #include "printActionKeys.c"
 
-int main()
-{
-    char action;
+int main() {
+  char action;
 
-    printf("========================================\n");
-    printf("            PASSWORD MANAGER\n");
-    printf("========================================\n");
+  printf("========================================\n");
+  printf("            PASSWORD MANAGER\n");
+  printf("========================================\n");
 
-    while (true)
-    {
-        print_action_keys();
-        scanf(" %c[^\n]", &action);
+  do {
+    print_action_keys();
+    scanf(" %c[^\n]", &action);
+  } while (!perform_actions(action));
 
-        boolean shouldTerminate = perform_actions(action);
-        
-        if (shouldTerminate)
-            break;
-    }
+  printf("\nTerminating the program......\n");
 
-    printf("\nTerminating the program......\n");
-
-    return 0;
+  return 0;
 }
