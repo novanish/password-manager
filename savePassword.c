@@ -43,8 +43,7 @@ void save_password() {
     fgets(info.password, sizeof(info.password), stdin);
   }
 
-  printf("Enter a key to encode your password (key shouldn't be less than zero "
-         "and greater than 100) => ");
+  printf("Enter a key to encode your password => ");
   int key = get_int();
 
   char *encode_password = malloc(strlen(info.password));
