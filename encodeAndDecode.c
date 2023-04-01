@@ -1,12 +1,10 @@
 #include "boolean.c"
 
-static void transformer(int key, char **str, boolean shouldEncode) {
+static void transformer(int key, char **str, boolean should_encode) {
+  key = should_encode ? key : -1 * key;
+
   for (int i = 0; (*str)[i] != '\0'; i++) {
-    if (shouldEncode) {
-      (*str)[i] += key;
-    } else {
-      (*str)[i] -= key;
-    }
+    (*str)[i] += key;
   }
 }
 
